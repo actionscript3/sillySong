@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var lyricsView: UITextView!
     
+    
     //how is this not an array, but a string?
     private let bananaFanaTemplate = [
         "<FULL_NAME>, <FULL_NAME>, Bo B<SHORT_NAME>",
@@ -24,11 +25,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameField.delegate = self
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
     @IBAction func reset(_ sender: UITextField) {
@@ -38,7 +35,7 @@ class ViewController: UIViewController {
     
     @IBAction func displayLyrics(_ sender: UITextField) {
         //why is capitalized not a method? Ah it's an implied getter
-        if let longName = sender.text?.lowercased().capitalized {
+        if let longName = sender.text?.lowercased() {
             print("NAME =", longName )
             let lyrics = lyricsForName( longName: longName, template: bananaFanaTemplate  )
             lyricsView.text = lyrics
@@ -61,7 +58,7 @@ class ViewController: UIViewController {
     private func lyricsForName(longName:String, template:String) -> String {
         let shortName = shortNameFromName( longName: longName )
         let lyrics = template
-            .replacingOccurrences(of: "<FULL_NAME>", with: longName)
+            .replacingOccurrences(of: "<FULL_NAME>", with: longName.capitalized)
             .replacingOccurrences(of: "<SHORT_NAME>", with: shortName)
         
         return lyrics
