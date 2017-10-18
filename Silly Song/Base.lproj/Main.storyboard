@@ -35,7 +35,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kZi-V6-GsJ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZi-V6-GsJ">
                                 <rect key="frame" x="16" y="181" width="343" height="309"/>
                                 <color key="backgroundColor" red="0.83787200215909008" green="0.89709096595265447" blue="0.97116909898477155" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
